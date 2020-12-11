@@ -23,17 +23,18 @@ Generate a Client ID and Client Secret on
 
 1. First go to the [Google Developers Console](https://console.developers.google.com/start/api?id=calendar)
 1. The wizard will ask you to choose a project to manage your application. Select a project and click continue.
-1. Verify that your calendar API was enabled and click 'Go to credentials'
-1. When it gets to the Page titled _Add credentials to your project_ just click cancel.
-1. Navigate to APIs & Services (left sidebar) > Credentials
+1. Verify that your calendar API was enabled and click 'Go to credentials'.
+1. When it gets to the Page titled _Add credentials to your project_ just click `Cancel`.
+1. Navigate to APIs & Services (left sidebar) > Credentials.
 1. Click on the field on the right of the screen, 'CONFIGURE CONSENT SCREEN', select "External" and create.
 1. Set the 'Application Name' (the name of the application asking for consent) to anything you want. We suggest "Home-Assistant".
 1. You then need to select a `Support email`. To do this, simply click the drop down box and select your email address.
-1. Scroll to the bottom and click `save`. (You don't have to fill out anything else)
+1. Scroll to the bottom and click `Save`. (You don't have to fill out anything else)
 1. You will then be automatically taken to the OAuth consent screen, you don't need to do anything here. Instead, click Credentials in the menu on the left hand side of the screen, then click `+ Create credentials` (at the top of the screen), then select `OAuth client ID`.
 1. Set the Application type to `TV and Limited Input` and give this credential set a name (like "Home Assistant Credentials") then click 'Create'.
 1. You will then be presented with a pop-up saying 'OAuth client created' showing `Your Client ID` and `Your Client Secret`. Make a note of these (for example, copy and paste them into a text editor) as you will need to put these in your `configuration.yaml` file shortly. Once you have noted these strings, click `OK`. If you need to find these credentials again at any point then simply nagivate to `APIs & Services` > `Credentials` and you will see `Home Assistant Credentials` (or whatever you named them in the previous step) under `OAuth 2.0 Clident IDs`. To view both the `Client ID` and `Client secret`, click on the pencil icon, this will take you to the settings page for these credentials and the information will be on the right hand side of the page.
 1. We need to double check that the "Google Calendar API" has been automatically enabled. To do this, select `Library` from the menu, then search for "Google Calendar API". If it is enabled you will see `API Enabled` with a green tick next to it. If it is not enabled, then enable it.
+1. In the menu on the left hand side of the screen, you can also check `OAuth consent screen` > `Publishing status`. This should state `In production`, if not check this option. It should now change into `Back to Testing`.
 
 
 If you will later be adding more scopes than just the "Google Calendar API" to the OAuth for this application, you will need to delete your token file under your Home Assistant Profile. You will lose your refresh token due to the re-authenticating to add more API access. It's recommended to use different authorizations for different pieces of Google.
